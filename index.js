@@ -8,6 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 const app=express()
 app.use(express.json())
 app.use(cors())
+const PORT=process.env.PORT||5500
 
 
 app.get('/', (req, res) => {
@@ -70,4 +71,4 @@ client.connect(err => {
     })
 });
 
-app.listen(5500,()=>console.log("Listening to port 5500"))
+app.listen(PORT,()=>console.log("Listening to port 5500"))
